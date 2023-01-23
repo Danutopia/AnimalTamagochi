@@ -27,29 +27,40 @@ namespace TierGehege
     public partial class MainWindow : Window
     {
         //UserControl1 userControl1 = new UserControl1();
-        Tier bello = new Hund();
-        Tier mellow = new Katze();
-        Tier hellow = new Hamster();
+        
        
 
         List<Tier> tierList = new List<Tier>();
         DispatcherTimer timer = new DispatcherTimer();
+        List<RadioButton> TierAuswahl= new List<RadioButton>();
+        List<Tier> Arten = new List<Tier>();
+
+        double zeit;
         public MainWindow()
         {
             InitializeComponent();
             timer.Tick += Animation;
             timer.Interval = TimeSpan.FromSeconds(5);
+
+            TierAuswahl.Add(Hamster);
+            TierAuswahl.Add(Katze);
+            TierAuswahl.Add(Hund);
+
         }
 
         private void Animation(object sender, EventArgs e)
         {
+            zeit +=0.05;
+            string zeitanzeige = Convert.ToString(zeit).Replace(",",":");
+            Zeit.Content=zeitanzeige;
+
             if (tierList.Count==0)
             {
                 Ende();   
             }
             if(tierList.Count!=0)
             {
-                foreach (var tier in tierList)
+                foreach (Tier tier in tierList)
                 {
                     tier.hunger -= tier.verbrauchHunger;
                     tier.liebe -= tier.verbrauchLiebe;
@@ -76,26 +87,30 @@ namespace TierGehege
 
         private void Start_Click(object sender, RoutedEventArgs e)
         {
+            Arten.Clear();
+            Arten.Add(new Hamster());
+            Arten.Add(new Katze());
+            Arten.Add(new Hund());
 
-            //UserControl1 userControl1 = new UserControl1();
             if (Hamster.IsChecked == true)
             {
-                tierList.Add(hellow);
+                tierList.Add(new Hamster());
                 tier1Img.Source = new BitmapImage(new Uri(tierList[0].pfad, UriKind.Relative));
             }
             else if(Katze.IsChecked == true)
             {
-                tierList.Add(mellow);
+                tierList.Add(new Katze());
                 tier1Img.Source = new BitmapImage(new Uri(tierList[0].pfad, UriKind.Relative));
             }
             else if(Hund.IsChecked== true)
             {
-                tierList.Add(bello);
+                tierList.Add(new Hund());
                 tier1Img.Source = new BitmapImage(new Uri(tierList[0].pfad, UriKind.Relative));
             }
-            else
+
+            if (tierList.Count() == 0)
             {
-                tierList.Add(bello);
+                tierList.Add(new Hund());
                 tier1Img.Source = new BitmapImage(new Uri(tierList[0].pfad, UriKind.Relative));
 
             }
@@ -113,42 +128,50 @@ namespace TierGehege
         }
         private void TierHinzufuegen_Click(object sender, RoutedEventArgs e)
         {
-           
+            Arten.Clear();
+            Arten.Add(new Hamster());
+            Arten.Add(new Katze());
+            Arten.Add(new Hund());
+            
+
             if (Hamster.IsChecked == true)
             {
-                tierList.Add(hellow);
+                tierList.Add(new Hamster());
                 tier2Img.Source = new BitmapImage(new Uri(tierList[1].pfad, UriKind.Relative));
                 visibleTier2();
             }
             else if (Katze.IsChecked == true)
             {
-                tierList.Add(mellow);
+                tierList.Add(new Katze());
                 tier2Img.Source = new BitmapImage(new Uri(tierList[1].pfad, UriKind.Relative));
                 visibleTier2();
             }
             else if (Hund.IsChecked == true)
             {
-                tierList.Add(bello);
+                tierList.Add(new Hund());
                 tier2Img.Source = new BitmapImage(new Uri(tierList[1].pfad, UriKind.Relative));
                 visibleTier2();
             }
-            tier1Hunger.Value = 100;
-            tier1Leben.Value = 100;
-            tier1Liebe.Value = 100;
+            tier2Hunger.Value = 100;
+            tier2Leben.Value = 100;
+            tier2Liebe.Value = 100;
 
 
         }
         private void TierEntfernen_Click(object sender, RoutedEventArgs e)
         {
-            if (Tier1.IsChecked==true)
+            if(tierList.Count == 0)
             {
-                tierList.RemoveAt(0);
-
+                TierWeg.Visibility = Visibility.Hidden;
+            }
+            else if (Tier1.IsChecked==true)
+            {
+                tierList[0].Sterben(tierList, 0);
 
             }
             else if(Tier2.IsChecked==true)
             {
-                tierList.RemoveAt(1);
+                tierList[1].Sterben(tierList, 1);
             }
             try
             {
@@ -248,6 +271,10 @@ namespace TierGehege
             MessageBox.Show("Alle Tot :(");
             Thread.Sleep(50);
             timer.Stop();
+            zeit = 0;
+            string zeitanzeige = Convert.ToString(zeit).Replace(",", ":");
+            Zeit.Content = zeitanzeige;
+
 
             tierList.Clear();
             Start.Visibility = Visibility.Visible;
@@ -261,6 +288,12 @@ namespace TierGehege
             Tier1.Visibility = Visibility.Hidden;
 
             InvisibleTier();
+            Fuettern.Visibility = Visibility.Hidden;
+            Putzen.Visibility = Visibility.Hidden;
+            Kuscheln.Visibility = Visibility.Hidden;
+            TierHinzu.Visibility = Visibility.Hidden;
+            TierWeg.Visibility = Visibility.Hidden;
+
         }
 
     }

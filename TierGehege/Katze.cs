@@ -11,6 +11,11 @@ namespace TierGehege
     {
         public Katze()
         {
+            Init();
+        }
+
+        public override void Init()
+        {
             pfad = "/img/katze.jpg";
             verbrauchHunger = 5;
             verbrauchLiebe = 5;

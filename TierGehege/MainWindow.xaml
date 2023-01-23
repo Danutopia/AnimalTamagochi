@@ -53,6 +53,7 @@
         <RadioButton GroupName="NeuesTier" Name="Hund" Grid.Column="2" Content="Hund"  HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="1" VerticalAlignment="Top"/>
         <RadioButton GroupName="NeuesTier" Name="Katze" Grid.Column="2" Content="Katze" HorizontalAlignment="Center" Margin="0,25,0,0" Grid.Row="1" VerticalAlignment="Top"/>
         <RadioButton GroupName="NeuesTier" Name="Hamster" Grid.Column="2" Content="Hamster" HorizontalAlignment="Center" Margin="0,50,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label Grid.Column="2" Name="Zeit" Content="" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top" Width="79"/>
         <!--ContentControl Name="Zoo" Content="ContentControl" HorizontalAlignment="Center" VerticalAlignment="Top" Height="484" Grid.RowSpan="3" Width="800" Grid.Column="1"/-->
     </Grid>
 

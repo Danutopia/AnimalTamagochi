@@ -11,11 +11,13 @@ namespace TierGehege
         public int leben = 100;
         public int hunger = 100;
         public int liebe = 100;
+
         public int verbrauchHunger = 5;
         public int verbrauchLiebe = 5;
         public string pfad;
 
 
+        public virtual void Init() { }
         public virtual double Essen(int food, int hungerLeiste) 
         { 
             return food + hungerLeiste; 
