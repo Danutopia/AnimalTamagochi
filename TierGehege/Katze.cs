@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace TierGehege
 {
+
     internal class Katze :Tier
     {
+        public Katze()
+        {
+            pfad = "/img/katze.jpg";
+            verbrauchHunger = 5;
+            verbrauchLiebe = 5;
+        }
     }
 }

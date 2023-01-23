@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.2.32505.173
+VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TierGehege", "\Mac\Home\Library\CloudStorage\OneDrive-BerufskollegBergischGladbach\Ausbildung 2020\Hit13\Halbjahr1\Software\Tiere\TierGehege\TierGehege\TierGehege.csproj", "{F6E2EEFE-4722-4A81-90AE-8A76294B976B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TierGehege", "TierGehege.csproj", "{F6E2EEFE-4722-4A81-90AE-8A76294B976B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +20,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {DEA0DE81-5E56-4183-99CE-3069BC7610BF}
+		SolutionGuid = {9A453E3E-198F-4BFA-852D-189320E2F729}
 	EndGlobalSection
 EndGlobal

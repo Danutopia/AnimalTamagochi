@@ -8,5 +8,11 @@ namespace TierGehege
 {
     internal class Hamster :Tier
     {
+        public Hamster()
+        {
+            pfad = "/img/hamster.jpg";
+            verbrauchHunger = 2;
+            verbrauchLiebe = 13;
+        }
     }
 }
