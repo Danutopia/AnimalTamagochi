@@ -20,11 +20,11 @@
             <RowDefinition Height="2*"/>
             <RowDefinition Height="0.7*"/>
         </Grid.RowDefinitions>
-        <Button Grid.Row="2" Name="Füttern" Content="Füttern" HorizontalAlignment="Left" Margin="20,0,0,0" VerticalAlignment="Top" Height="25" Width="95" Click="Füttern_Click"/>
-        <Button Grid.Row="2" Content="Putzen" HorizontalAlignment="Left" Margin="145,0,0,0" VerticalAlignment="Top" Width="95"  Height="25"/>
-        <Button Grid.Row="2" Content="Liebe" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" Height="25" Width="95" Grid.Column="1" />
-        <Button Grid.Row="2" Grid.Column="2" Content="Tier hinzufügen"  Margin="25,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="TierHinzufügen_Click"/>
-        <Button Grid.Row="2" Grid.Column="2" Content="Tier entfernen"  Margin="150,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Button Grid.Row="2" Name="Fuettern" Content="Füttern" HorizontalAlignment="Left" Margin="20,0,0,0" VerticalAlignment="Top" Height="25" Width="95" Click="Füttern_Click" Visibility="Hidden"/>
+        <Button Grid.Row="2" Name="Putzen" Content="Putzen" HorizontalAlignment="Left" Margin="145,0,0,0" VerticalAlignment="Top" Width="95"  Height="25" Visibility="Hidden"/>
+        <Button Grid.Row="2" Name="Kuscheln" Content="Kuscheln" HorizontalAlignment="Left" Margin="15,0,0,0" VerticalAlignment="Top" Height="25" Width="95" Grid.Column="1" Click="Kuscheln_Click" Visibility="Hidden" />
+        <Button Grid.Row="2" Name="TierHinzu" Grid.Column="2" Content="Tier hinzufügen"  Margin="25,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="TierHinzufuegen_Click" Visibility="Hidden"/>
+        <Button Grid.Row="2" Name="TierWeg" Grid.Column="2" Content="Tier entfernen"  Margin="150,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="TierEntfernen_Click" Visibility="Hidden"/>
         <Button Name="Start" Content="Start" Margin="84,74,79,0" VerticalAlignment="Top"  Height="200" Click="Start_Click" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
 
         <!--Tier1-->
@@ -53,6 +53,7 @@
         <RadioButton GroupName="NeuesTier" Name="Hund" Grid.Column="2" Content="Hund"  HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Row="1" VerticalAlignment="Top"/>
         <RadioButton GroupName="NeuesTier" Name="Katze" Grid.Column="2" Content="Katze" HorizontalAlignment="Center" Margin="0,25,0,0" Grid.Row="1" VerticalAlignment="Top"/>
         <RadioButton GroupName="NeuesTier" Name="Hamster" Grid.Column="2" Content="Hamster" HorizontalAlignment="Center" Margin="0,50,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <!--ContentControl Name="Zoo" Content="ContentControl" HorizontalAlignment="Center" VerticalAlignment="Top" Height="484" Grid.RowSpan="3" Width="800" Grid.Column="1"/-->
     </Grid>
 
 </Window>

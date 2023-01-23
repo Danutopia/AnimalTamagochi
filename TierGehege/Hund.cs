@@ -15,10 +15,5 @@ namespace TierGehege
             verbrauchLiebe = 10;
         }
 
-        public override double Essen(int food, int hungerLeiste)
-        {
-           return food + hungerLeiste;
-        }
-
     }
 }

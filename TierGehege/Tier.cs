@@ -16,14 +16,20 @@ namespace TierGehege
         public string pfad;
 
 
-        public virtual double Essen(int food, int hungerLeiste) { return food + hungerLeiste; }
-        public virtual void schlafen() { }
+        public virtual double Essen(int food, int hungerLeiste) 
+        { 
+            return food + hungerLeiste; 
+        }
 
-        public virtual void kuscheln() { }
+        public virtual double Kuscheln(int liebe, int liebeLeiste)
+        { 
+            return liebe + liebeLeiste; 
+        }
 
-        public virtual void sterben()
+        public List<Tier> Sterben(List<Tier> tierlist, int index)
         {
-
+            tierlist.RemoveAt(index);
+            return tierlist;
         }
 
     }
